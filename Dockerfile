@@ -13,3 +13,4 @@ RUN docker-php-ext-install pdo_mysql
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 RUN sed -i 's/;extension=pdo_mysql/extension=pdo_mysql/g' /usr/local/etc/php/php.ini
 COPY --from=builder /tmp/domainmod /var/www/html
+VOLUME ["/var/www/html"]
